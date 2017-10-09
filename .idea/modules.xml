@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jni-bsdconv.iml" filepath="$PROJECT_DIR$/.idea/modules/jni-bsdconv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jni-bsdconv_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jni-bsdconv_main.iml" group="jni-bsdconv" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jni-bsdconv_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jni-bsdconv_test.iml" group="jni-bsdconv" />
+    </modules>
+  </component>
+</project>
