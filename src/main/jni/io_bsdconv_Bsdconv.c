@@ -23,17 +23,17 @@ JNIEXPORT jbyteArray JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1conv
     jbyte *jba = (*env)->GetByteArrayElements(env, data_buf, NULL);
 
     bsdconv_init(ins);
-    ins->output_mode=BSDCONV_AUTOMALLOC;
-    ins->input.data=(char *)jba;
-    ins->input.len=data_len;
-    ins->input.flags=0;
-    ins->input.next=NULL;
-    ins->flush=1;
+    ins->output_mode = BSDCONV_AUTOMALLOC;
+    ins->input.data = (char *)jba;
+    ins->input.len = data_len;
+    ins->input.flags = 0;
+    ins->input.next = NULL;
+    ins->flush = 1;
     bsdconv(ins);
 
     (*env)->ReleaseByteArrayElements(env, data_buf, jba, 0);
 
-    jbyteArray ret=(*env)->NewByteArray(env, ins->output.len);
+    jbyteArray ret = (*env)->NewByteArray(env, ins->output.len);
     (*env)->SetByteArrayRegion(env, ret, 0, ins->output.len, ins->output.data);
 
     bsdconv_free(ins->output.data);
