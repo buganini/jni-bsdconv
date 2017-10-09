@@ -3,8 +3,7 @@ package io.bsdconv;
 public class Bsdconv {
     static {
         try {
-            System.load("/home/buganini/repo/buganini/jni-bsdconv/src/main/jni/bsdconv.so");
-//            System.loadLibrary("bsdconv");
+            System.loadLibrary("bsdconv-jni");
         } catch (UnsatisfiedLinkError e) {
             System.err.println("Native code library failed to load.\n" + e);
             System.exit(1);

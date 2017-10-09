@@ -1,0 +1,10 @@
+PREFIX?=/usr
+CFLAGS+=-O2 -Wall
+
+all: jni
+
+jni: src/main/jni/io_bsdconv_Bsdconv.c src/main/jni/io_bsdconv_Bsdconv.h
+	$(CC) ${CFLAGS} src/main/jni/io_bsdconv_Bsdconv.c -L${PREFIX}/lib -o out/libbsdconv-jni.so -I${JAVA_HOME}/include/ -I${JAVA_HOME}/include/linux/ -shared -fPIC -lbsdconv
+
+install:
+	install -m 444 out/libbsdconv-jni.so ${PREFIX}/lib/jni
