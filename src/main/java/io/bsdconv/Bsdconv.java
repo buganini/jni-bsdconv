@@ -15,6 +15,8 @@ public class Bsdconv {
     private static native long _bsdconv_create(String conversion);
     private static native byte[] _bsdconv_conv(long ins, byte[] data);
     private static native void _bsdconv_init(long ins);
+    private static native byte[] _bsdconv_conv_chunk(long ins, byte[] data);
+    private static native byte[] _bsdconv_conv_chunk_last(long ins, byte[] data);
     private static native String _bsdconv_pack(long ins);
 
     public Bsdconv(String conversion) {
@@ -27,6 +29,14 @@ public class Bsdconv {
 
     public void init(){
         _bsdconv_init(this.ins);
+    }
+
+    public byte[] conv_chunk(byte[] data){
+        return _bsdconv_conv_chunk(this.ins, data);
+    }
+
+    public byte[] conv_chunk_last(byte[] data){
+        return _bsdconv_conv_chunk_last(this.ins, data);
     }
 
     @Override

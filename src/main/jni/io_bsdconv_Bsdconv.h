@@ -33,6 +33,22 @@ JNIEXPORT void JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1init
 
 /*
  * Class:     io_bsdconv_Bsdconv
+ * Method:    _bsdconv_conv_chunk
+ * Signature: (J[B)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1conv_1chunk
+  (JNIEnv *, jclass, jlong, jbyteArray);
+
+/*
+ * Class:     io_bsdconv_Bsdconv
+ * Method:    _bsdconv_conv_chunk_last
+ * Signature: (J[B)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1conv_1chunk_1last
+  (JNIEnv *, jclass, jlong, jbyteArray);
+
+/*
+ * Class:     io_bsdconv_Bsdconv
  * Method:    _bsdconv_pack
  * Signature: (J)Ljava/lang/String;
  */

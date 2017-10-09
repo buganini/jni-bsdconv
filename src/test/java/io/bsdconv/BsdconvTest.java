@@ -3,6 +3,8 @@ package io.bsdconv;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BsdconvTest {
 
@@ -21,5 +23,18 @@ public class BsdconvTest {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void conv_chunk(){
+        Bsdconv ins = new Bsdconv("big5:utf-8");
+        ins.init();
+        StringBuffer sb = new StringBuffer();
+        sb.append(new String(ins.conv_chunk(new byte[]{(byte)0xa5})));
+        sb.append(new String(ins.conv_chunk(new byte[]{(byte)0x5c})));
+        sb.append(new String(ins.conv_chunk(new byte[]{(byte)0xaf})));
+        sb.append(new String(ins.conv_chunk(new byte[]{(byte)0xe0})));
+        sb.append(new String(ins.conv_chunk_last(new byte[]{})));
+        assertEquals("功能", sb.toString());
     }
 }
