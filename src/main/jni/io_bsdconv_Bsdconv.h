@@ -17,6 +17,22 @@ JNIEXPORT jlong JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1create
 
 /*
  * Class:     io_bsdconv_Bsdconv
+ * Method:    _bsdconv_conv
+ * Signature: (J[B)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1conv
+  (JNIEnv *, jclass, jlong, jbyteArray);
+
+/*
+ * Class:     io_bsdconv_Bsdconv
+ * Method:    _bsdconv_init
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1init
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     io_bsdconv_Bsdconv
  * Method:    _bsdconv_pack
  * Signature: (J)Ljava/lang/String;
  */

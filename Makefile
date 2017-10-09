@@ -8,3 +8,6 @@ jni: src/main/jni/io_bsdconv_Bsdconv.c src/main/jni/io_bsdconv_Bsdconv.h
 
 install:
 	install -m 444 out/libbsdconv-jni.so ${PREFIX}/lib/jni
+
+gen_header:
+	javah -classpath src/main/java/ -d src/main/jni/ io.bsdconv.Bsdconv
