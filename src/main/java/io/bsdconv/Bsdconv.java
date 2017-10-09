@@ -1,4 +1,4 @@
-package io.buganini;
+package io.bsdconv;
 
 public class Bsdconv {
     static {

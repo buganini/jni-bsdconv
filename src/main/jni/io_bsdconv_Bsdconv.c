@@ -1,9 +1,9 @@
 #include <jni.h>
 #include <bsdconv.h>
 #include <stdint.h>
-#include "io_buganini_Bsdconv.h"
+#include "io_bsdconv_Bsdconv.h"
 
-JNIEXPORT jlong JNICALL Java_io_buganini_Bsdconv__1bsdconv_1create
+JNIEXPORT jlong JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1create
   (JNIEnv *env, jobject self, jstring jconv){
     const char *conv = (*env)->GetStringUTFChars(env, jconv, NULL);
 
@@ -16,7 +16,7 @@ JNIEXPORT jlong JNICALL Java_io_buganini_Bsdconv__1bsdconv_1create
     return (uintptr_t) ins;
   }
 
-JNIEXPORT jstring JNICALL Java_io_buganini_Bsdconv__1bsdconv_1pack
+JNIEXPORT jstring JNICALL Java_io_bsdconv_Bsdconv__1bsdconv_1pack
   (JNIEnv *env, jclass self, jlong jins){
     struct bsdconv_instance *ins = (struct bsdconv_instance *)(uintptr_t) jins;
 

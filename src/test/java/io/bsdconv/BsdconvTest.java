@@ -1,8 +1,6 @@
-package io.buganini;
+package io.bsdconv;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class BsdconvTest {
 
