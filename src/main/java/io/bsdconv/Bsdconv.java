@@ -1,9 +1,19 @@
 package io.bsdconv;
 
+import java.security.AccessController;
+import java.security.PrivilegedAction;
+
 public class Bsdconv {
     static {
         try {
-            System.loadLibrary("bsdconv-jni");
+            AccessController.doPrivileged(new PrivilegedAction<Void>() {
+                @Override
+                public Void run() {
+                    System.loadLibrary("bsdconv-jni");
+                    return null;
+                }
+            });
+
         } catch (UnsatisfiedLinkError e) {
             System.err.println("Native code library failed to load.\n" + e);
             System.exit(1);
