@@ -10,17 +10,5 @@ repositories {
 }
 
 dependencies {
-    testCompile files(project(':native').bsdconv.outputFile)
     testCompile group: 'junit', name: 'junit', version: '4.12'
-}
-
-def SYS_INCLUDE_DIR = this.properties['system.include.dir']
-def SYS_LOCAL_INCLUDE_DIR = this.properties['system.local.include.dir']
-def JNI_INCLUDE_DIR = this.properties['jni.include.dir']
-def JNI_LIB_DIR = this.properties['jni.lib.dir']
-
-model {
-    components {
-        bsdconv(NativeLibrarySpec)
-    }
 }
